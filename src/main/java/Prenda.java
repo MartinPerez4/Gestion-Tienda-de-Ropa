@@ -1,10 +1,10 @@
-public class Prenda {
-    private String codigo;
-    private String nombre;
-    private String marca;
-    private double precioBase;
+public abstract class Prenda {
+    private  String codigo;
+    private  String nombre;
+    private  String marca;
+    protected double precioBase;
 
-    private CategoriaPrenda categoriaPrenda;
+    private  CategoriaPrenda categoriaPrenda;
 
     public Prenda(String codigo, String nombre, String marca, double precioBase, CategoriaPrenda categoriaPrenda) {
         this.codigo = codigo;
@@ -12,6 +12,9 @@ public class Prenda {
         this.marca = marca;
         this.precioBase = precioBase;
         this.categoriaPrenda = categoriaPrenda;
+    }
+
+    public Prenda() {
     }
 
     public String getCodigo() {
@@ -53,4 +56,6 @@ public class Prenda {
     public void setCategoriaPrenda(CategoriaPrenda categoriaPrenda) {
         this.categoriaPrenda = categoriaPrenda;
     }
+    //metodo para calcular el precio con recargo
+    public abstract double calcularPrecioConRecargo();
 }
