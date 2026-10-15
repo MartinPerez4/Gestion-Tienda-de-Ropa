@@ -1,4 +1,4 @@
-public abstract class Prenda {
+public class Prenda {
     private  String codigo;
     private  String nombre;
     private  String marca;
@@ -56,6 +56,9 @@ public abstract class Prenda {
     public void setCategoriaPrenda(CategoriaPrenda categoriaPrenda) {
         this.categoriaPrenda = categoriaPrenda;
     }
-    //metodo para calcular el precio con recargo
-    public abstract double calcularPrecioConRecargo();
+
+ // metodo calcular Recargo
+    public double calcularMontoRecargo() {
+        return this.precioBase * this.categoriaPrenda.getRecargo();
+    }
 }
