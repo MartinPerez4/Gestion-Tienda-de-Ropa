@@ -18,7 +18,7 @@ public class Prenda {
         this.marca = marca;
         this.precioBase = precioBase;
         this.categoriaPrenda = categoriaPrenda;
-        listaPrendas= new ArrayList<>();
+
     }
 
     public Prenda() {

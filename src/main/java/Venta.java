@@ -18,6 +18,15 @@ public class Venta {
         this.cliente = cliente;
         this.detalles = detalles;
     }
+    public Venta(String codigo, LocalDate fecha, Sucursal sucursal, Vendedor vendedor, Cliente cliente, DetalleVenta detalle) {
+        this.codigo = codigo;
+        this.fecha = fecha;
+        this.sucursal = sucursal;
+        this.vendedor = vendedor;
+        this.cliente = cliente;
+        this.detalles = new ArrayList<>();
+        this.detalles.add(detalle);
+    }
 
     public String getCodigo() {
         return codigo;

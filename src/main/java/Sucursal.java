@@ -21,6 +21,14 @@ public class Sucursal {
         this.inventarios = inventarios;
         this.ventas = ventas;
     }
+    public Sucursal(String codigo, String nombre, String direccion, String ciudad) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.ciudad = ciudad;
+        this.inventarios = new ArrayList<>();
+        this.ventas = new ArrayList<>();
+    }
 
     public String getCodigo() {
         return codigo;

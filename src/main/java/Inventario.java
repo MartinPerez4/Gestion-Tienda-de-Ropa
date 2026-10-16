@@ -52,4 +52,8 @@ public class Inventario {
     public void setCantidadDisp(int cantidadDisp) {
         this.cantidadDisp = cantidadDisp;
     }
+
+    public void agregarDetalle(DetalleVenta det) {
+
+    }
 }

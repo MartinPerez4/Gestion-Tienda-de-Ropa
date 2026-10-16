@@ -15,7 +15,6 @@ public abstract class Persona {
         this.nombre = nombre;
         this.telefono = telefono;
         this.correo = correo;
-        listaPersonas=new ArrayList<>();
     }
 
     public String getDocumento() {

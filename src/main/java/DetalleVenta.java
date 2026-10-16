@@ -11,6 +11,7 @@ public class DetalleVenta {
         this.subtotal = subtotal;
     }
 
+
     public Inventario getInventario() {
         return inventario;
     }
