@@ -50,6 +50,14 @@ public class Sucursal {
         this.ciudad = ciudad;
     }
 
+    public static List<Sucursal> getListaSucursales() {
+        return listaSucursales;
+    }
+
+    public static void setListaSucursales(List<Sucursal> listaSucursales) {
+        Sucursal.listaSucursales = listaSucursales;
+    }
+
     // CRUD
     // 1. CREATE (Registrar con verificación de código único)
     public static boolean registrar(Sucursal nuevaSucursal) {
