@@ -42,4 +42,8 @@ public class DetalleVenta {
     public void setSubtotal(double subtotal) {
         this.subtotal = subtotal;
     }
+    public double calcularPrecioUnitarioFinal(double descuento) {
+        double conRecargo = inventario.getPrenda().calcularPrecioConRecargo();
+        return conRecargo * (1 - descuento);
+    }
 }

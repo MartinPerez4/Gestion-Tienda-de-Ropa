@@ -1,4 +1,6 @@
 import java.time.LocalDate;
+import java.util.List;
+import java.util.ArrayList;
 
 public class Venta {
     private String codigo;
@@ -6,13 +8,15 @@ public class Venta {
     private Sucursal sucursal;
     private Vendedor vendedor;
     private Cliente cliente;
+    private List<DetalleVenta> detalles = new ArrayList<>();
 
-    public Venta(String codigo, LocalDate fecha, Sucursal sucursal, Vendedor vendedor, Cliente cliente) {
+    public Venta(String codigo, LocalDate fecha, Sucursal sucursal, Vendedor vendedor, Cliente cliente, List<DetalleVenta> detalles) {
         this.codigo = codigo;
         this.fecha = fecha;
         this.sucursal = sucursal;
         this.vendedor = vendedor;
         this.cliente = cliente;
+        this.detalles = detalles;
     }
 
     public String getCodigo() {
@@ -53,5 +57,22 @@ public class Venta {
 
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
+    }
+
+    public List<DetalleVenta> getDetalles() {
+        return detalles;
+    }
+
+    public void setDetalles(List<DetalleVenta> detalles) {
+        this.detalles = detalles;
+    }
+
+    public double calcularTotal() {
+        double total = 0;
+        for (DetalleVenta detalle : detalles) {
+            total += detalle.getCantidad() * detalle.getPrecioUnitarioFinal();
+        }
+        return total;
+
     }
 }

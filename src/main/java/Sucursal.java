@@ -7,15 +7,19 @@ public class Sucursal {
     private String direccion;
     private String ciudad;
 
+    private List<Inventario> inventarios = new ArrayList<>();
+    private List<Venta> ventas = new ArrayList<>();
+
     // Lista
     private static List<Sucursal> listaSucursales = new ArrayList<>();
 
-    public Sucursal(String codigo, String nombre, String direccion, String ciudad) {
+    public Sucursal(String codigo, String nombre, String direccion, String ciudad, List<Inventario> inventarios, List<Venta> ventas) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.direccion = direccion;
         this.ciudad = ciudad;
-        listaSucursales=new ArrayList<>();
+        this.inventarios = inventarios;
+        this.ventas = ventas;
     }
 
     public String getCodigo() {
@@ -56,6 +60,22 @@ public class Sucursal {
 
     public static void setListaSucursales(List<Sucursal> listaSucursales) {
         Sucursal.listaSucursales = listaSucursales;
+    }
+
+    public List<Inventario> getInventarios() {
+        return inventarios;
+    }
+
+    public void setInventarios(List<Inventario> inventarios) {
+        this.inventarios = inventarios;
+    }
+
+    public List<Venta> getVentas() {
+        return ventas;
+    }
+
+    public void setVentas(List<Venta> ventas) {
+        this.ventas = ventas;
     }
 
     // CRUD
@@ -119,5 +139,13 @@ public class Sucursal {
         }
         System.out.println(" Error: No se encontró una sucursal con el código " + codigo);
         return false;
+    }
+
+    public double calcularIngresos() {
+        double total = 0;
+        for (Venta venta : ventas) {
+            total += venta.calcularTotal();
+        }
+        return total;
     }
 }

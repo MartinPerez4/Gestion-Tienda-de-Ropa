@@ -2,9 +2,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Prenda {
-    private  String codigo;
-    private  String nombre;
-    private  String marca;
+    private String codigo;
+    private String nombre;
+    private String marca;
     protected double precioBase;
 
     private  CategoriaPrenda categoriaPrenda;
@@ -139,5 +139,15 @@ public class Prenda {
     // metodo calcular Recargo
     public double calcularMontoRecargo() {
         return this.precioBase * this.categoriaPrenda.getRecargo();
+    }
+
+    public double calcularPrecioConRecargo() {
+        double recargo = switch (categoriaPrenda) {
+            case VESTIDO  -> 0.10;
+            case CHAQUETA -> 0.15;
+            case CALZADO  -> 0.05;
+            default       -> 0.00; //
+        };
+        return precioBase * (1 + recargo);
     }
 }

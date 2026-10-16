@@ -23,4 +23,11 @@ public class Cliente extends Persona{
     public void setCategoriaCliente(CategoriaCliente categoriaCliente) {
         this.categoriaCliente = categoriaCliente;
     }
+    public double obtenerDescuento() {
+        return switch (categoriaCliente) {
+            case ORO   -> 0.15;
+            case PLATA -> 0.10;
+            case BRONCE    -> 0.05;
+        };
+    }
 }
